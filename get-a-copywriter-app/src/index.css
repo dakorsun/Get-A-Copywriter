@@ -1,0 +1,274 @@
+* {
+  font-size: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+
+/*
+  header
+*/
+
+.header {
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  background:orange;
+  position: relative;
+  border-bottom: 1px #E9EFF3;
+  
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+  .header .left-part {
+    width: 50%;
+    position: relative;
+
+    display: flex;
+    align-items: stretch;
+  }
+
+    .header .left-part .Logo {
+      background: orangered;
+      width: 36.94%;   
+
+    }
+
+    .header .left-part .Navigation {
+      font-family: 'Open Sans';
+      background: aquamarine;
+      position: relative;
+      
+      flex-grow: 1.706766917;
+      
+      display: flex;
+      align-items: stretch;
+      
+    }
+
+        .header .left-part .Navigation .Nav-button {
+          height: 100%;
+          font-size: 15px;
+          color: #6F6F7A;
+          font-weight: 600;
+          text-align: center;
+
+          width: 20%;
+        } 
+  
+
+
+  .header .right-part {
+    width: 28.61%;
+    border-left: 1px  #F0F0F0;   
+    position: relative;
+
+    display: flex;
+    align-items: stretch;
+  }
+
+    .header .right-part .Names {
+      width: 47.33%;
+      background: firebrick;
+
+    }
+
+    .header .right-part .icon-block{
+      /*width: 52.67%;*/
+      background: olivedrab;
+    
+      flex-grow: 1.107692308;
+    }
+
+      .header .right-part .icon-block .Messages {
+        width: 10%;
+      }
+
+      .header .right-part .icon-block .About {
+        width: 10%;
+      }
+
+      .header .right-part .icon-block .User {
+        width: 10%;
+      }
+
+
+
+/*
+SubMenu
+*/
+
+.sub-menu {
+  width: 100%;
+  /*border-bottom: 1px solid #E9EFF3;*/
+}
+
+  .sub-menu .container {
+    width: 70.16%;
+    height: 40px;
+    background: skyblue;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: stretch;
+  }
+
+    .sub-menu .container .сalendar-button {
+      width: 13.005272408%;
+      background: lightcoral;
+    }
+
+
+
+/*
+CalendarApp
+*/
+
+.calendar-app {
+  width: 70.16%;
+  margin: 0 auto;
+  background: cadetblue;
+  min-height: 600px;
+}
+
+  .calendar-app .heading {
+    width: 100%;
+    height: 40px;
+    margin: 20px 0 18px 0;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+    .calendar-app .heading .left-part {
+      width: 19.561403509%;
+      background: lawngreen;  
+      
+      display: flex;
+      justify-content: space-between;
+    }
+
+      .calendar-app .heading .left-part .filters {
+        width: 52.01793722%;
+        background: rgba(0,0,200,.4);
+      }
+
+      .calendar-app .heading .left-part .today-button {
+        width: 40.807174888%;
+        background: rgba(0,0,200,.4);
+      }
+
+    .calendar-app .heading .center-part {
+      width: 23.859649123%;
+      margin: 0 38.070175439%;
+      height: 40px;
+      background: lawngreen;
+
+      position: absolute;
+
+
+    }
+
+    .calendar-app .heading .right-part {
+      width: 26.228070175%;
+      background: lawngreen;
+      display: flex;
+    }
+
+      .calendar-app .heading .right-part .current-step-button {
+        width: 50%;
+        background: rgba(0,0,200,.4);
+        border-right: 1px solid lawngreen; 
+      }
+
+      .calendar-app .heading .right-part .publish-date-button {
+        width: 50%;
+        background: rgba(0,0,200,.4);
+      }
+
+  .calendar-app .filter-tools {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+    background: lawngreen;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+    .calendar-app .filter-tools .filter{
+      width: 18.684210526%;
+      background: rgba(0,0,200,.4);
+    
+    }
+
+    .calendar-app .filter-tools .filter:nth-child(5) {
+      width: 19.649122807%;
+    }
+
+  .calendar-app .calendar {
+    width: 100%;
+    background: fuchsia;
+  }
+
+    .calendar-app .calendar .days {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid thistle;
+
+
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+
+    }
+
+      .calendar-app .calendar .days .day {
+        width: 14.285714286%;
+        position: relative;
+        text-align: center;
+      }
+
+          .calendar-app .calendar .days .day div {
+          font: 400 14px 'Open sans';
+          color: #484B58;
+          line-height: 40px;
+          }
+    
+    .calendar-app .calendar .calendar-row {
+      width: 100%;
+      border-bottom: 1px solid thistle;
+      border-left: 1px solid thistle;
+      border-right: 1px solid thistle;
+      
+      
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+      .calendar-app .calendar .calendar-row .day-cell {
+        width: 14.285714286%;
+        border-right: 1px solid thistle;
+      }
+      .calendar-app .calendar .calendar-row .day-cell:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+      .calendar-app .calendar .calendar-row .day-cell:last-of-type {
+        border-right: none;
+      }

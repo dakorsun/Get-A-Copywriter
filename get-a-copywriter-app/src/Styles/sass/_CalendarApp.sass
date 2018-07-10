@@ -1,0 +1,138 @@
+@import './variables'
+
+.calendar-app
+    width: 70.16%
+    margin: 0 auto
+    //background: cadetblue
+    background: $main-bg
+    min-height: 600px
+
+    .heading
+        width: 100%
+        height: $menu-height
+        margin: 20px 0 18px 0
+        position: relative
+        font-size: $font-middle
+        color: #6F6F7A
+        /**/
+        display: flex
+        justify-content: space-between
+
+        .button
+            border: 1px solid $border-color
+            //background: rgba(0,0,200,.4)
+            background: $main-bg
+            line-height: $menu-height
+            text-align: center
+
+        .left-part
+            width: 19.561403509%
+            //background: lawngreen
+            background: $main-bg
+            /**/
+            display: flex
+            justify-content: space-between
+
+            .filters
+                width: 52.01793722%
+
+            
+            .today
+                width: 40.807174888%  
+
+        .center-part
+            width: 23.859649123%
+            margin: 0 38.070175439%
+            height: $menu-height
+            //background: lawngreen
+            background: $main-bg
+            position: absolute
+
+        .right-part
+            width: 26.228070175%
+            //background: lawngreen
+            background: $main-bg
+            /**/
+            display: flex
+            align-items: stretch
+
+            .current-step
+                width: 50%
+                border-right: none
+
+            .publish-date
+                width: 50%
+
+    .filter-tools
+        width: 100%
+        margin-bottom: 20px
+        height: $menu-height
+        //background: lawngreen
+        background: $main-bg
+        /**/
+        display: flex
+        justify-content: space-between
+        align-items: stretch
+        
+        .filter
+            width: 18.684210526%
+            //background: rgba(0,0,200,.4)
+            background: $main-bg
+            border: 1px solid $border-color
+            padding: 0 10px 
+            
+            &:last-of-type
+                width: 19.649122807%
+
+            p
+                font-size: $font-middle
+                line-height: $menu-height 
+                color: $active-color
+                display: inline-block
+
+    .calendar
+        width: 100%
+        //background: fuchsia
+        background: $main-bg
+
+        .days
+            width: 100%
+            height: $menu-height
+            line-height: $menu-height
+            border: 1px solid $border-color
+            /**/
+            display: flex
+            justify-content: space-between
+            align-items: stretch
+
+            .day
+                width: 14.285714286%
+                position: relative
+                text-align: center
+
+                div
+                    font: 400 14px 'Open Sans'
+                    color: #484b58
+                    line-height: $menu-height
+
+        .calendar-row
+            width: 100%
+            border-bottom: 1px solid $border-color
+            border-left: 1px solid $border-color
+            border-right: 1px solid $border-color
+            /**/
+            display: flex
+            justify-content: space-between
+            align-items: stretch
+
+            .day-cell
+                width: 14.285714286%
+                border-right: 1px solid $border-color
+
+                &:after
+                    content: ''
+                    display: block
+                    padding-bottom: 100%
+                    
+                &:last-of-type
+                    border-right: none

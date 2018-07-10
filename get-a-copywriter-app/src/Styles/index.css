@@ -1,0 +1,220 @@
+.header {
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  background: #FAFCFE;
+  position: relative;
+  border-bottom: 1px solid #E9EFF3;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  justify-content: space-between; }
+  .header .left-part {
+    width: 50%;
+    position: relative;
+    /**/
+    display: flex;
+    align-items: stretch; }
+    .header .left-part .Logo {
+      background: #FAFCFE;
+      width: 36.94%; }
+    .header .left-part .Navigation {
+      font-family: 'Open Sans';
+      background: #FAFCFE;
+      position: relative;
+      /**/
+      flex-grow: 1.706766917;
+      /**/
+      display: flex;
+      align-items: stretch; }
+      .header .left-part .Navigation .Nav-button {
+        /*height: 100%*/
+        font-size: 15px;
+        color: #6F6F7A;
+        font-weight: 600;
+        text-align: center;
+        width: 20%; }
+        .header .left-part .Navigation .Nav-button:hover {
+          color: #484B58;
+          cursor: pointer; }
+      .header .left-part .Navigation .underline {
+        position: absolute;
+        width: 16%;
+        height: 2px;
+        bottom: 0;
+        left: calc(20% + 2%);
+        background-image: linear-gradient(308.94deg, #4CDCC8 0%, #54E5A0 100%); }
+  .header .right-part {
+    width: 28.61%;
+    position: relative;
+    /**/
+    display: flex;
+    align-items: stretch; }
+    .header .right-part .Names {
+      width: 47.33%;
+      font-size: 13px;
+      color: #484B58;
+      padding-left: 8.737846154%;
+      position: relative;
+      background: #FAFCFE;
+      border-left: 1px solid #F0F0F0;
+      border-right: 1px solid #F0F0F0; }
+      .header .right-part .Names .pop-up {
+        position: absolute;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        top: 40px;
+        z-index: 999;
+        width: 100%; }
+        .header .right-part .Names .pop-up .name {
+          padding-left: 18.461538462%;
+          font-size: 13px;
+          color: #484B58;
+          background: #FAFCFE;
+          height: 40px;
+          z-index: 999; }
+    .header .right-part .icon-block {
+      background: #FAFCFE;
+      /**/
+      flex-grow: 1.107692308; }
+
+.sub-menu {
+  width: 100%;
+  border-bottom: 1px solid #E9EFF3; }
+  .sub-menu .container {
+    width: 70.16%;
+    height: 40px;
+    background: #FAFCFE;
+    margin: 0 auto;
+    position: relative;
+    /**/
+    display: flex;
+    align-items: stretch; }
+    .sub-menu .container .button-2 {
+      width: 15%;
+      line-height: 40px;
+      text-align: center;
+      background: #FAFCFE;
+      font-size: 13px;
+      color: #484B58; }
+
+.calendar-app {
+  width: 70.16%;
+  margin: 0 auto;
+  background: #FAFCFE;
+  min-height: 600px; }
+  .calendar-app .heading {
+    width: 100%;
+    height: 40px;
+    margin: 20px 0 18px 0;
+    position: relative;
+    font-size: 13px;
+    color: #6F6F7A;
+    /**/
+    display: flex;
+    justify-content: space-between; }
+    .calendar-app .heading .button {
+      border: 1px solid #E9EFF3;
+      background: #FAFCFE;
+      line-height: 40px;
+      text-align: center; }
+    .calendar-app .heading .left-part {
+      width: 19.561403509%;
+      background: #FAFCFE;
+      /**/
+      display: flex;
+      justify-content: space-between; }
+      .calendar-app .heading .left-part .filters {
+        width: 52.01793722%; }
+      .calendar-app .heading .left-part .today {
+        width: 40.807174888%; }
+    .calendar-app .heading .center-part {
+      width: 23.859649123%;
+      margin: 0 38.070175439%;
+      height: 40px;
+      background: #FAFCFE;
+      position: absolute; }
+    .calendar-app .heading .right-part {
+      width: 26.228070175%;
+      background: #FAFCFE;
+      /**/
+      display: flex;
+      align-items: stretch; }
+      .calendar-app .heading .right-part .current-step {
+        width: 50%;
+        border-right: none; }
+      .calendar-app .heading .right-part .publish-date {
+        width: 50%; }
+  .calendar-app .filter-tools {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+    background: #FAFCFE;
+    /**/
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; }
+    .calendar-app .filter-tools .filter {
+      width: 18.684210526%;
+      background: #FAFCFE;
+      border: 1px solid #E9EFF3;
+      padding: 0 10px; }
+      .calendar-app .filter-tools .filter:last-of-type {
+        width: 19.649122807%; }
+      .calendar-app .filter-tools .filter p {
+        font-size: 13px;
+        line-height: 40px;
+        color: #484B58;
+        display: inline-block; }
+  .calendar-app .calendar {
+    width: 100%;
+    background: #FAFCFE; }
+    .calendar-app .calendar .days {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #E9EFF3;
+      /**/
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch; }
+      .calendar-app .calendar .days .day {
+        width: 14.285714286%;
+        position: relative;
+        text-align: center; }
+        .calendar-app .calendar .days .day div {
+          font: 400 14px 'Open Sans';
+          color: #484b58;
+          line-height: 40px; }
+    .calendar-app .calendar .calendar-row {
+      width: 100%;
+      border-bottom: 1px solid #E9EFF3;
+      border-left: 1px solid #E9EFF3;
+      border-right: 1px solid #E9EFF3;
+      /**/
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch; }
+      .calendar-app .calendar .calendar-row .day-cell {
+        width: 14.285714286%;
+        border-right: 1px solid #E9EFF3; }
+        .calendar-app .calendar .calendar-row .day-cell:after {
+          content: '';
+          display: block;
+          padding-bottom: 100%; }
+        .calendar-app .calendar .calendar-row .day-cell:last-of-type {
+          border-right: none; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #FAFCFE;
+  font-family: 'Open Sans'; }
+
+.none {
+  display: none; }

@@ -1,0 +1,103 @@
+@import "./variables"
+    
+
+.header
+    height: $menu-height
+    line-height: $menu-height
+    width: 100% 
+    //background: orange
+    background: $main-bg
+    position: relative
+    border-bottom: 1px solid $border-color
+
+    
+    display: flex
+    align-items: stretch
+    flex-wrap: nowrap
+    justify-content: space-between
+
+    .left-part 
+        width: 50%
+        position: relative
+        /**/
+        display: flex
+        align-items: stretch
+
+        .Logo
+            //background: orangered
+            background: $main-bg
+            width: 36.94%
+
+        .Navigation
+            font-family: 'Open Sans'
+            //background: aquamarine
+            background: $main-bg
+            position: relative
+            /**/
+            flex-grow: 1.706766917
+            /**/
+            display: flex
+            align-items: stretch
+
+            .Nav-button
+                /*height: 100%*/
+                font-size: $font-big
+                color: $default-color
+                font-weight: 600
+                text-align: center
+                width: 20%
+                &:hover
+                    color: $active-color
+                    cursor: pointer
+            
+            .underline
+                position: absolute
+                width: 16%
+                height: 2px
+                bottom: 0
+                left: calc(20% + 2%)
+                background-image: linear-gradient(308.94deg, #4CDCC8 0%, #54E5A0 100%)
+
+
+    .right-part 
+        width: 28.61%
+        position: relative
+        /**/
+        display: flex
+        align-items: stretch
+
+        .Names 
+            width: 47.33%
+            font-size: $font-middle
+            color: $active-color
+            padding-left: 8.737846154% 
+            position: relative
+                //background: firebrick
+            background: $main-bg
+            border-left: 1px solid $border-color-2
+            border-right: 1px solid $border-color-2
+            
+            .pop-up 
+                position: absolute
+                left: 0
+                display: flex
+                flex-direction: column
+                align-items: stretch 
+                top: $menu-height
+                z-index: 999
+                width: 100% 
+
+                .name 
+                    padding-left: 18.461538462%
+                    font-size: $font-middle
+                    color: $active-color 
+                    background: $main-bg
+                    height: $menu-height
+                    z-index: 999
+            
+
+        .icon-block
+            //background: olivedrab
+            background: $main-bg
+            /**/
+            flex-grow: 1.107692308
