@@ -1,0 +1,74 @@
+@import './variables'
+    
+
+
+.basic-appear
+    margin-top: 40px
+    opacity: 0.01
+
+
+.basic-appear.basic-appear-active
+    margin-top: 0
+    opacity: 1
+    transition: 300ms ease-in
+
+
+
+.basic-enter
+    margin-top: 40px
+    opacity: 0.01
+
+
+.basic-enter.basic-enter-active
+    margin-top: 0
+    opacity: 1
+    transition: 300ms ease-in
+
+
+
+.basic-leave
+    margin-top: 0
+    opacity: 1
+
+.basic-leave.basic-leave-active
+    margin-top: 40px
+    opacity: 0.01
+    transition: 200ms ease-out
+
+
+
+
+
+
+.filters-appear
+    margin-top: -$menu-height
+    opacity: 0.01
+
+
+.filters-appear.filters-appear-active
+    margin-top: 0
+    opacity: 1
+    transition: 250ms ease-out
+
+
+
+.filters-enter
+    margin-top: -$menu-height
+    opacity: 0.01
+
+
+.filters-enter.filters-enter-active
+    margin-top: 0
+    opacity: 1
+    transition: 250ms ease-out
+
+
+
+.filters-leave
+    margin-top: 0
+    opacity: 1
+
+.filters-leave.filters-leave-active
+    margin-top: -$menu-height
+    opacity: 0.01
+    transition: 200ms ease-out

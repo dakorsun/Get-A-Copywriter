@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import PopUp from './PopUp';
-import { bindActionCreators } from 'redux'
-import * as actions from '../../Actions/Header/index.js'
+import NamesPopUp from './NamesPopUp';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Names extends Component{
     
@@ -12,6 +11,7 @@ class Names extends Component{
     }
     
     headerNamesHover(){
+        console.log('1')
         this.props.onHeaderNamesHover()
     }
 
@@ -21,6 +21,8 @@ class Names extends Component{
 
     render() {
       
+        
+
         return(
             <div 
                 className='Names'
@@ -28,8 +30,15 @@ class Names extends Component{
                 onMouseLeave={this.headerNamesLeave.bind(this)}
                 >
                 <p className='text'>Douglas Page</p>
-                <div className='arrow down'/>
-                <PopUp/>
+                <div className='img'>
+                    <div 
+                        className='arrow down'/>
+                </div>
+                <ReactCSSTransitionGroup
+                    transitionName="basic"
+                    transitionAppear={true}>
+                    {this.props.isOpened && <NamesPopUp/> || !this.props.isOpened && null}
+                </ReactCSSTransitionGroup>
             </div>            
             
         )
@@ -38,7 +47,8 @@ class Names extends Component{
 
 export default connect(
     state => ({
-        store: state
+        isOpened: state.headerReducer.names.isOpened,
+        isFirstTimeLanded: state.headerReducer.names.isFirstTimeLanded,
     }),
     dispatch => ({
         onHeaderNamesHover: () => {

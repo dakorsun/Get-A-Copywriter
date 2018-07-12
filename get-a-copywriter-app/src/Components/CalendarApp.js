@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Heading from './CalendarAppComponents/Heading'; 
 import FilterTools from './CalendarAppComponents/FilterTools'; 
 import Calendar from './CalendarAppComponents/Calendar'; 
+import { connect } from 'react-redux';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 class CalendarApp extends Component {
@@ -9,11 +11,22 @@ class CalendarApp extends Component {
         return(
             <div className = 'calendar-app'>
                 <Heading />
-                <FilterTools />
+                <ReactCSSTransitionGroup
+                        transitionName="filters"
+                        transitionAppear={true}>
+                        {this.props.isFiltersOpened && <FilterTools />}
+                    </ReactCSSTransitionGroup>
                 <Calendar />
             </div>
         )
     }
 }
 
-export default CalendarApp;
+export default connect(
+    state => ({
+        isFiltersOpened:  state.calendarAppReducer.filters.isOpened
+    }),
+    dispatch => ({
+
+    })
+)(CalendarApp);

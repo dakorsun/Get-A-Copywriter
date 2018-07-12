@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Days from './Days';
 import CalendarRow from './CalendarRow';
+import { connect } from 'react-redux';
 
 class Calendar extends Component {
     render() {
@@ -18,4 +19,17 @@ class Calendar extends Component {
     }
 }
 
-export default Calendar;
+export default connect(
+    state => ({
+        mounths: state.calendarAppReducer.mounths.november
+    }),
+    dispatch => ({
+
+    })
+)(Calendar);
+
+/* 
+{this.props.november.map(week => 
+    <CalendarRow 
+        weekIndex={week.index}/>
+)} */

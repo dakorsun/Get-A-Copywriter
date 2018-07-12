@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class FilterTools extends Component{
     render() {
@@ -8,35 +9,52 @@ class FilterTools extends Component{
                     <p>
                     Campaigns
                     </p>
-                    <div className='arrow down'/>
+                    <div className='img'>
+                        <div className='arrow down'/>
+                    </div>
                 </div>
                 <div className='filter'>
                     <p>
                     Blog post, White p...
                     </p>
-                    <div className='arrow down'/>
+                    <div className='img'>
+                        <div className='arrow down'/>
+                    </div>
                 </div>
                 <div className='filter'>
                     <p>
                     Statuses
                     </p>
-                    <div className='arrow down'/>
+                    <div className='img'>
+                        <div className='arrow down'/>
+                    </div>
                 </div>
                 <div className='filter'>
                     <p>
                     Creator
                     </p>
-                    <div className='arrow down'/>
+                    <div className='img'>
+                        <div className='arrow down'/>
+                    </div>
                 </div>
                 <div className='filter'>
                     <p>
                     Tegs
                     </p>
-                    <div className='arrow down'/>
+                    <div className='img'>
+                        <div className='arrow down'/>
+                    </div>
                 </div>
             </div>
         )
     }
 }
 
-export default FilterTools;
+export default connect(
+    state =>({
+        isFiltersOpened:  state.calendarAppReducer.filters.isOpened
+    }),
+    dispatch => ({
+
+    })
+)(FilterTools);
