@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class DayApp extends Component {
+
+class Main extends Component {
+    
     render() {
         return(
-            <div className=''>
-                
+            <div >
             </div>
         )
     }
 }
 
 export default connect(
-    state =>({
+    state => ({
 
     }),
     dispatch => ({
 
     })
-)(DayApp);
+)(Main);

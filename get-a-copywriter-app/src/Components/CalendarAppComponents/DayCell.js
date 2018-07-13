@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import DayApp from './DayApp';
 import { connect } from 'react-redux';
+import Head from './Head';
+import Main from './Main';
 
 class DayCell extends Component {
     
@@ -18,7 +19,9 @@ class DayCell extends Component {
                 onMouseEnter={this.mouseHover.bind(this)}
                 onMouseLeave={this.mouseLeave.bind(this)}
                 className='day-cell'>
-                <DayApp/>
+                <Head 
+                    day={this.props.day}/>
+                <Main />
             </div>
         )
     }

@@ -12,8 +12,8 @@
     "shortid": "^2.2.10"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "build-css": "node-sass-chokidar --include-path ./public/Styles --include-path ./node_modules public/ -o public/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./public/Styles --include-path ./node_modules public/ -o public/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
