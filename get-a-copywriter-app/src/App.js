@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CalendarApp from './Components/CalendarApp';
 import Header from './Components/Header';
 import SubMenu from './Components/SubMenu';
+import Footer from './Components/Footer';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
         <Header />
         <SubMenu />
         <CalendarApp />
+        <Footer/>
       </div>
     );
   }

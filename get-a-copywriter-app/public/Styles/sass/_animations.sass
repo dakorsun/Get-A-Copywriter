@@ -41,34 +41,65 @@
 
 
 .filters-appear
-    margin-top: -$menu-height
+    height: 1px
     opacity: 0.01
 
 
 .filters-appear.filters-appear-active
-    margin-top: 0
+    height: $menu-height
     opacity: 1
     transition: 250ms ease-out
 
 
 
 .filters-enter
-    margin-top: -$menu-height
+    height: 1px
     opacity: 0.01
 
 
 .filters-enter.filters-enter-active
-    margin-top: 0
+    height: $menu-height
     opacity: 1
     transition: 250ms ease-out
 
 
 
 .filters-leave
-    margin-top: 0
+    height: $menu-height
     opacity: 1
 
 .filters-leave.filters-leave-active
-    margin-top: -$menu-height
+    height: 1px
     opacity: 0.01
     transition: 200ms ease-out
+
+
+
+
+
+
+.addBtn-appear
+    opacity: 0.01
+
+
+.addBtn-appear.addBtn-appear-active
+    opacity: 1
+    transition: 250ms linear
+
+
+.addBtn-enter
+    opacity: 0.01
+
+
+.addBtn-enter.addBtn-enter-active
+    opacity: 1
+    transition: 250ms linear
+
+
+
+.addBtn-leave
+    opacity: 1
+
+.addBtn-leave.addBtn-leave-active
+    opacity: 0.01
+    transition: 200ms linear

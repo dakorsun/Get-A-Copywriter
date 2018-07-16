@@ -8,23 +8,56 @@ export default function calendarAppActions(state = initialState, action){
             console.log('2');
             for(let key in state){
                 newState[key] = state[key];
-            }
+            };
             newState.filters.isOpened = !newState.filters.isOpened;
-            return(newState)
+            return(newState);
+            break;
         
-        /* case 'DAYCELL_HOVER':
+        case 'FORMATS_CLICK':
+            console.log('4')
+            for(let key in state){
+                newState[key] = state[key];
+            };
+            newState.formats.isOpened = !newState.formats.isOpened;
+            return(newState);
+            break;
+
+        case 'FORMAT_CLICK':
+            console.log('4')
+            for(let key in state){
+                newState[key] = state[key];
+            };
+            newState.formats.list[action.index].isChecked = !newState.formats.list[action.index].isChecked;
+            return(newState);
+            break;
+
+       
+
+       /*  case 'DAYCELL_HOVER': {
             for(let key in state){
                 newState[key] = state[key];
             }
-            newState.dayCell.isOnFocus = true;
+            newState.monthsToRender.mainScreen[action.index].days = state.monthsToRender.mainScreen[action.index].days.map(day => {
+                if(day.id === action.id){
+                    day.states.onFocus = true;
+                    return day
+                }else{return day}
+            }) 
+
             return(newState)
-        
-        case 'DAYCELL_HOVER':
+        }
+        case 'DAYCELL_LEAVE':
             for(let key in state){
                 newState[key] = state[key];
             }
-            newState.dayCell.isOnFocus = false;
-            return(newState) */
+            newState.monthsToRender.mainScreen[action.index].days = state.monthsToRender.mainScreen[action.index].days.map(day => {
+                if(day.id === action.id){
+                    day.states.onFocus = false;
+                    return day
+                }else{return day}
+            }) 
+
+            return(newState)  */  
     
 
         default: 

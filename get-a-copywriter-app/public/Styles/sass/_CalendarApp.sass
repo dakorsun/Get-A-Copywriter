@@ -1,7 +1,7 @@
 @import './variables'
 
 .calendar-app
-    width: 70.16%
+    width: $container-width
     margin: 0 auto
     //background: cadetblue
     background: $main-bg
@@ -25,6 +25,8 @@
             background: $main-bg
             line-height: $menu-height
             text-align: center
+            &:hover
+                cursor: pointer
 
         .left-part
             width: 19.561403509%
@@ -70,6 +72,7 @@
                             display: inline-block
                             padding: 3px
                             transition: .1s
+                            cursor: pointer
 
                 .date
                     display: inline-block
@@ -111,6 +114,8 @@
         display: flex
         justify-content: space-between
         align-items: stretch
+
+        .div
         
         .filter
             width: 18.684210526%
@@ -120,6 +125,8 @@
             padding: 0 10px 
             position: relative
             padding: 0 16px
+            &:hover
+                cursor: pointer
             
             &:last-of-type
                 width: 19.649122807%
@@ -137,16 +144,53 @@
                 top: 0
                 
                 .arrow
+
+        .formats
+
+            .pop-up
+                width: 269px
+                background: #fff
+                z-index: 200
+                border: 1px solid $border-color
+                opacity: 1
+                position: absolute
+                top: 52px
+                *
+                    z-index: 200
+
+                .format
+                    height: $menu-height
+                    vertical-align: middle
+
+
+                    .checkbox
+                        margin: auto 8px auto 16px
+                        width: 22px
+                        height: 22px
+                        display: inline-block
+                        background-image: url(../Assets/default.svg)
+                        transform: translateY(5px)
+
+                    .checked
+                        background-image: url(../Assets/selected.svg)
+                    
+
+
+                    .format-name
+                        display: inline-block
+                        line-height: $menu-height
+
+
                 
 
     .calendar
-        width: $calendar-width
+        width: $container-width
         //background: fuchsia
         background: $main-bg
         min-height: 800px
 
         .days
-            width: $calendar-width
+            width: $container-width
             height: $menu-height
             line-height: $menu-height
             border: 1px solid $border-color
@@ -166,7 +210,7 @@
                     line-height: $menu-height
 
         .calendar-row
-            width: $calendar-width
+            width: $container-width
             border-bottom: 1px solid $border-color
             border-left: 1px solid $border-color
             border-right: 1px solid $border-color
@@ -175,42 +219,222 @@
             justify-content: space-between
             align-items: stretch
 
+            .shaded
+                background-image: repeating-linear-gradient(-45deg, #ccc 1px, #fff 2px, #fff 5px, #ccc 6px)
+                background-color: #fff
+
             .day-cell
                 width: $cell-width
-                min-height: 143px
+                min-height: 163px
                 border-right: 1px solid $border-color
                 padding: 8px     
                 position: relative
+
 
                 .head 
                     width: 100%
                     height: 40px
                     padding: 0 8px
-                    display: flex
-                    justify-content: space-between
 
                     .add
                         font-size: 0
+                        height: 40px
+                        &:hover
+                            cursor: pointer
 
                         .img
                             display: inline-block
                             width: 24px
                             height: 24px
-                            background-image: url(Assets/circle-plus.svg)
-                            background-size: 24px 24px
-                            fill: #4cdcc8
+                            border-radius: 12px
+                            background-image: linear-gradient(309deg, #4cdcc8, #54e5a0)
+                            color: #fff
+                            font-size: 26px
+                            font-weight: 700
+                            line-height: 24px
+                            text-align: center
+                            vertical-align: middle
 
                         .text
                             display: inline-block
                             vertical-align: middle
                             font-size: $font-middle
                             color: $active-color
+                            margin-left: 8px
 
                     .date
                         font-size: $font-small
                         color: $default-color
                         line-height: $lh-small
-                        margin-top: 5px
+                        position: absolute
+                        top: 13px
+                        right: 16px
 
+                        .text
+                            display: inline-block
+                            margin-right: 5px
+
+                        .number
+                            display: inline-block
+                
+                .main
+                    font-size: 0
+                    width: 100%
+                    color: $default-color
+
+                    .project
+                        padding: 5px  
+                        border: 1px solid $border-color
+                        margin-bottom: 4px
+                        background: $main-bg
+                        border-radius: 4px
+                        &:hover
+                            cursor: pointer
+
+                        .project-head
+                            width: 100%
+                            font-size: $font-small
+                            line-height: 16px
+
+                        .content
+                            width: 100%
+                            font-size: $font-small
+                            line-height: 16px
+                            margin-top: 5px
+
+                        .bottom
+                            width: 100%
+                            margin-top: 8px
+                            position: relative
+                            display: flex
+                            justify-content: space-between
+                            align-items: stretch
+
+                            .user
+                                height: 26px                            
+                                display: inline-block
+
+                                .img
+                                    width: 16px
+                                    height: 16px
+                                    border-radius: 8px
+                                    overflow: hidden
+                                    position: relative
+                                    background: $border-color
+                                    display: inline-block
+                                    transform: translateY(4px)
+
+                                    img
+                                        width: 100%
+
+                                .initials
+                                    display: inline-block
+                                    font-size: $font-small
+                                    line-height: 26px
+                                    margin-left: 4px
+                                    
+
+                            .status
+                                display: inline-block
+                                height: 26px
+                                margin-right: 0
+
+                                .icon
+                                    display: inline-block
+                                    line-height: 26px    
+                                    vertical-align: middle
+
+
+                                .status-text
+                                    font-size: $font-small
+                                    display: inline-block
+                                    line-height: 26px    
+                                    vertical-align: middle
+
+                    .published
+                        border-right: 4px solid #74A3D2
+
+                        .bottom
+
+                            .status
+                                
+                                .icon
+                                    width: 12px
+                                    height: 12px
+                                    border-radius: 6px
+                                    background: #74A3D2 
+
+                    .editing
+                        border-right: 4px solid #43B993
+
+                        .bottom
+
+                            .status
+                                
+                                .icon
+                                    width: 12px
+                                    height: 12px
+                                    border-radius: 6px
+                                    background: #43B993 
+
+                    .revision
+                        border-right: 4px solid #FCCC5E
+
+                        .bottom
+
+                            .status
+                                
+                                .icon
+                                    width: 12px
+                                    height: 12px
+                                    border-radius: 6px
+                                    background: #FCCC5E
+ 
+
+                    .approved
+                        border-right: 4px solid $active-color
+
+                        .bottom
+
+                            .status
+                                
+                                .icon
+                                    width: 12px
+                                    height: 12px
+                                    border-radius: 6px
+                                    background: $active-color
+
+
+            .today
+                border: 2px solid #74a3d2
+                border-right: 2px solid #74a3d2
+                z-index: 100
+
+                .head
+
+
+                    .add
+
+                        .text
+                            display: none
+
+                    .date
+                        top: 8px
+                        right: 8px
+
+                        .text
+                            color: $blue-color
+                            margin-right: 5px
+
+                        .number
+                            width: 24px
+                            height: 24px
+                            border-radius: 12px
+                            background: $blue-color
+                            color: #fff
+                            font-weight: 400
+                            text-align: center
+                            line-height: 24px
               
+            
 

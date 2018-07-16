@@ -5,12 +5,35 @@ import Main from './Main';
 
 class DayCell extends Component {
     
+    constructor(props){
+        super(props)
+
+        this.state = {
+            onFocus: false
+        }
+
+
+    }
+
+    setCellStyle() {
+        
+        if(this.props.day.container.isToday){
+            return 'day-cell today';
+        };
+        if(!this.props.day.container.isMonthActual){
+            return 'day-cell shaded';
+        };
+        return 'day-cell';
+    }
+
     mouseHover() {
-        this.props.onMouseEnter();
+        this.setState({onFocus: true});
+        this.props.onMouseLeave(this.props.day.id, this.props.weekIndex);
     }
 
     mouseLeave() {
-        this.props.onMouseLeave();
+        this.setState({onFocus: false});
+        this.props.onMouseLeave(this.props.day.id, this.props.weekIndex);
     }
     
     render() {
@@ -18,10 +41,12 @@ class DayCell extends Component {
             <div 
                 onMouseEnter={this.mouseHover.bind(this)}
                 onMouseLeave={this.mouseLeave.bind(this)}
-                className='day-cell'>
+                className={this.setCellStyle()}>
                 <Head 
-                    day={this.props.day}/>
-                <Main />
+                    day={this.props.day} 
+                    onFocus={this.state.onFocus}/>
+                <Main 
+                    projects={this.props.day.projects}/>
             </div>
         )
     }
@@ -29,14 +54,14 @@ class DayCell extends Component {
 
 export default connect(
     state => ({
-
+        mainScreen: state.calendarAppReducer.monthsToRender.mainScreen
     }),
     dispatch => ({
-        onMouseEnter: () => {
-            dispatch({type: 'DAYCELL_HOVER'})
+        onMouseEnter: (id, i) => {
+            dispatch({type: 'DAYCELL_HOVER', id: id, index: i})
         },
-        onMouseLeave: () => {
-            dispatch({type: 'DAYCELL_LEAVE'})
+        onMouseLeave: (id, i) => {
+            dispatch({type: 'DAYCELL_LEAVE', id: id, index: i})
         }
 
     })

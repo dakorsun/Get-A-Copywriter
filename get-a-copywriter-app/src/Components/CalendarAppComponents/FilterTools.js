@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Formats from './Formats';
 
 class FilterTools extends Component{
+    
     render() {
         return(
             <div className='filter-tools'>
@@ -13,14 +15,7 @@ class FilterTools extends Component{
                         <div className='arrow down'/>
                     </div>
                 </div>
-                <div className='filter'>
-                    <p>
-                    Blog post, White p...
-                    </p>
-                    <div className='img'>
-                        <div className='arrow down'/>
-                    </div>
-                </div>
+                <Formats/>
                 <div className='filter'>
                     <p>
                     Statuses
@@ -51,10 +46,10 @@ class FilterTools extends Component{
 }
 
 export default connect(
-    state =>({
+    state => ({
         isFiltersOpened:  state.calendarAppReducer.filters.isOpened
     }),
     dispatch => ({
-
+        
     })
 )(FilterTools);

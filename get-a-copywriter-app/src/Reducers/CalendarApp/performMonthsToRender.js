@@ -1,4 +1,5 @@
-import shortid from 'shortid';
+
+import setDayName from './setDayName'
 
 const performMonthsToRender = function(calendar, today) {
 
@@ -13,7 +14,8 @@ const performMonthsToRender = function(calendar, today) {
     leftScreen: [],
     mainScreen: [],
     rightScreen: [],
-    today: today
+    today: today,
+    setDayName: setDayName
   };
 
 
@@ -60,9 +62,27 @@ const performMonthsToRender = function(calendar, today) {
             year: calendar.days[i].year,
             month: calendar.days[i].month,
             day: calendar.days[i].day,
-            id: shortid.generate(),
-            container: calendar.days[i].container
+            id: calendar.days[i].id,
+            projects: calendar.days[i].projects,
+            container: {
+              isToday: false,
+              isFirstDay: false,
+              isMonthActual: false
+            }
           }
+
+          if(+calendar.days[i].month === +date.getMonth() && +calendar.days[i].day === +date.getDate()){
+            day.container.isToday = true;
+          }
+
+          if(+calendar.days[i].day === 1){
+            day.container.isFirstDay = true;
+          }
+
+          if(+calendar.days[i].month === date.getMonth()){
+            day.container.isMonthActual = true;
+          }
+
           week.days = week.days.concat(day);
         }
         res = res.concat(week);
@@ -74,6 +94,7 @@ const performMonthsToRender = function(calendar, today) {
   result.rightScreen = setScreen(actualDay, calendar, 'right');
 
   return result;
+
 
 };
 

@@ -1,5 +1,10 @@
-const setCalendar = function() {
-  let date = new Date(2018, 10, 16);
+import shortid from 'shortid';
+
+
+const setCalendar = function(arr) {
+  let date;
+  arr ? date = new Date(arr[0], arr[1], arr[2]) : date = new Date();
+  
   console.log(date);
 
   let today = {
@@ -9,7 +14,7 @@ const setCalendar = function() {
   };
   console.log(today);
 
-  let createCalendar = function(year, month, day) {
+  let createCalendar = function(year, month, day, today) {
     year = +year
     month = +month
     day = +day
@@ -29,7 +34,9 @@ const setCalendar = function() {
         year: "",
         month: "",
         day: "",
-        container: {}
+        id: shortid.generate(),
+        container: {},
+        projects:[]
       };
       day.year = countDate.getFullYear() + "";
       day.month = countDate.getMonth() + "";
@@ -45,7 +52,7 @@ const setCalendar = function() {
     return result;
   };
 
-  let calendar = createCalendar(today.year, today.month, today.day);
+  let calendar = createCalendar(today.year, today.month, today.day, today);
   return calendar
 };
 

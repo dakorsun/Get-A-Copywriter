@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Days from './Days';
 import CalendarRow from './CalendarRow';
 import { connect } from 'react-redux';
-import shortid from 'shortid';
 
 class Calendar extends Component {
     render() {
@@ -11,7 +10,10 @@ class Calendar extends Component {
                 <Days />
                  {this.props.actualDaysScreen.map((week, i) => 
                     <CalendarRow 
-                        days={this.props.actualDaysScreen[i].days}/>
+                        days={week.days}
+                        weekIndex={i}
+
+                    />
                 )} 
             </div>
         )

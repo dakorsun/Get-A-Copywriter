@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./public/Styles --include-path ./node_modules public/ -o public/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./public/Styles --include-path ./node_modules public/ -o public/ --watch --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./public/Styles --include-path ./node_modules public/Styles -o public/Styles --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
