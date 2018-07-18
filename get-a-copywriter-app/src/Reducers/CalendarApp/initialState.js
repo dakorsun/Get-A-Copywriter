@@ -2,6 +2,7 @@ import setCalendar from './setCalendar';
 import performMonthsToRender from './performMonthsToRender';
 import injectProjects from './injectProjects';
 import initialProjects from './projects';
+import switchScreen from './switchScreen';
 
     let calendar = setCalendar([2018, 10, 16]);
     calendar = injectProjects(calendar, initialProjects);
@@ -48,7 +49,11 @@ const initialState = {
         ]
     },
     calendar: calendar,
-    monthsToRender: performMonthsToRender(calendar, calendar.today)
+    monthsToRender: performMonthsToRender(calendar, calendar.today),
+    functions: {
+        switchScreen: switchScreen
+    }
+
 }
 
 

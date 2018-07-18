@@ -6,7 +6,7 @@ class SubMenu extends Component{
             <div className='sub-menu'>
                 <div className='container'>
                     <div className='calendar button-2'>
-                        Editional calendar
+                        Editorial calendar
                     </div>
                     <div className='underline'/>
                 </div>

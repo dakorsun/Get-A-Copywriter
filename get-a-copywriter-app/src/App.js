@@ -3,6 +3,7 @@ import CalendarApp from './Components/CalendarApp';
 import Header from './Components/Header';
 import SubMenu from './Components/SubMenu';
 import Footer from './Components/Footer';
+import Plus from './Components/Plus';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <SubMenu />
         <CalendarApp />
         <Footer/>
+        <Plus/>
       </div>
     );
   }

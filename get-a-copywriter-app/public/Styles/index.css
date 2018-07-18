@@ -100,13 +100,16 @@
   line-height: 48px;
   width: 100%;
   background: #FAFCFE;
-  position: relative;
+  position: fixed;
+  top: 0;
   border-bottom: 1px solid #E9EFF3;
-  z-index: 15;
+  z-index: 200;
   display: flex;
   align-items: stretch;
   flex-wrap: nowrap;
   justify-content: space-between; }
+  .header * {
+    z-index: 250; }
   .header .left-part {
     width: 50%;
     position: relative;
@@ -193,14 +196,16 @@
         align-items: stretch;
         top: 48px;
         z-index: -2;
-        width: 100%; }
+        width: 100%;
+        z-index: 250; }
         .header .right-part .Names .pop-up .name {
           padding-left: 18.461538462%;
           font-size: 15px;
           color: #484B58;
           height: 48px;
           background: #FAFCFE;
-          border-bottom: 1px solid #E9EFF3; }
+          border-bottom: 1px solid #E9EFF3;
+          z-index: 250; }
           .header .right-part .Names .pop-up .name:hover {
             cursor: pointer; }
     .header .right-part .icon-block {
@@ -216,6 +221,8 @@
         position: relative;
         vertical-align: middle;
         line-height: 24px; }
+        .header .right-part .icon-block .messages:hover {
+          cursor: pointer; }
         .header .right-part .icon-block .messages img {
           display: inline-block;
           width: 24px;
@@ -376,7 +383,12 @@
 
 .sub-menu {
   width: 100%;
-  border-bottom: 1px solid #E9EFF3; }
+  border-bottom: 1px solid #E9EFF3;
+  position: fixed;
+  top: 48px;
+  z-index: 160; }
+  .sub-menu * {
+    z-index: 160; }
   .sub-menu .container {
     width: 1141px;
     height: 48px;
@@ -407,12 +419,13 @@
 .calendar-app {
   width: 1141px;
   margin: 0 auto;
+  margin-top: 120px;
   background: #FAFCFE;
   min-height: 600px; }
   .calendar-app .heading {
     width: 100%;
     height: 48px;
-    margin: 20px 0 18px 0;
+    margin: 0 0 18px 0;
     position: relative;
     font-size: 15px;
     color: #6F6F7A;
@@ -820,6 +833,22 @@
     color: #6F6F7A;
     text-decoration: underline; }
 
+.plus-fixed {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  font-size: 35px;
+  color: #fff;
+  font-family: 'Open Sans';
+  background: linear-gradient(308.94deg, #4CDCC8 0%, #54E5A0 100%);
+  line-height: 58px;
+  text-align: center; }
+  .plus-fixed:hover {
+    cursor: pointer; }
+
 * {
   margin: 0;
   padding: 0;
@@ -831,3 +860,8 @@ body {
 
 .none {
   display: none; }
+
+.pop-up {
+  z-index: 250; }
+  .pop-up * {
+    z-index: 250; }

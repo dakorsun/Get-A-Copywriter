@@ -1,11 +1,10 @@
-import initialState from './initialState'
+import initialState from './initialState';
 
 export default function calendarAppActions(state = initialState, action){
     let newState = {};
 
     switch(action.type) {
         case 'FILTERS_CLICK':
-            console.log('2');
             for(let key in state){
                 newState[key] = state[key];
             };
@@ -14,7 +13,6 @@ export default function calendarAppActions(state = initialState, action){
             break;
         
         case 'FORMATS_CLICK':
-            console.log('4')
             for(let key in state){
                 newState[key] = state[key];
             };
@@ -23,7 +21,6 @@ export default function calendarAppActions(state = initialState, action){
             break;
 
         case 'FORMAT_CLICK':
-            console.log('4')
             for(let key in state){
                 newState[key] = state[key];
             };
@@ -31,35 +28,18 @@ export default function calendarAppActions(state = initialState, action){
             return(newState);
             break;
 
+        case 'SWITCH_SCREEN':
+            for(let key in state){
+                newState[key] = state[key];
+            };
+            
+            return state.map(item => (item === state.monthsToRender) ? state.functions.switchScreen(state.calendar, item, action.direction) : item)
+
+
+            return(newState);
+            break;
+
        
-
-       /*  case 'DAYCELL_HOVER': {
-            for(let key in state){
-                newState[key] = state[key];
-            }
-            newState.monthsToRender.mainScreen[action.index].days = state.monthsToRender.mainScreen[action.index].days.map(day => {
-                if(day.id === action.id){
-                    day.states.onFocus = true;
-                    return day
-                }else{return day}
-            }) 
-
-            return(newState)
-        }
-        case 'DAYCELL_LEAVE':
-            for(let key in state){
-                newState[key] = state[key];
-            }
-            newState.monthsToRender.mainScreen[action.index].days = state.monthsToRender.mainScreen[action.index].days.map(day => {
-                if(day.id === action.id){
-                    day.states.onFocus = false;
-                    return day
-                }else{return day}
-            }) 
-
-            return(newState)  */  
-    
-
         default: 
         return state
     }
