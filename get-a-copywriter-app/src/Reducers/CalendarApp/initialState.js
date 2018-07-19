@@ -48,8 +48,8 @@ const initialState = {
             }
         ]
     },
-    calendar: calendar,
-    monthsToRender: performMonthsToRender(calendar, calendar.today),
+    projects: initialProjects,
+    monthsToRender: performMonthsToRender(initialProjects),
     functions: {
         switchScreen: switchScreen
     }

@@ -2,7 +2,8 @@ const initialProjects = [
     {
         date: {
             day: '8',
-            month: '10'
+            month: '10',
+            year: '2018'
         },
         projects: [
             {
@@ -19,7 +20,8 @@ const initialProjects = [
     {
         date: {
             day: '12',
-            month: '10'
+            month: '10',
+            year: '2018'
         },
         projects: [
             {
@@ -36,7 +38,8 @@ const initialProjects = [
     {
         date: {
             day: '20',
-            month: '10'
+            month: '10',
+            year: '2018'
         },
         projects: [
             {
@@ -53,7 +56,8 @@ const initialProjects = [
     {
         date: {
             day: '21',
-            month: '10'
+            month: '10',
+            year: '2018'
         },
         projects: [
             {
@@ -67,7 +71,8 @@ const initialProjects = [
     {
         date: {
             day: '27',
-            month: '10'
+            month: '10',
+            year: '2018'
         },
         projects: [
             {
@@ -162,7 +167,8 @@ const initialProjects = [
     {
         date: {
             day: '30',
-            month: '10'
+            month: '10',
+            year: '2018'
         },
         projects: [
             {
@@ -179,7 +185,8 @@ const initialProjects = [
     {
         date: {
             day: '9',
-            month: '11'
+            month: '11',
+            year: '2018'
         },
         projects: [
             {

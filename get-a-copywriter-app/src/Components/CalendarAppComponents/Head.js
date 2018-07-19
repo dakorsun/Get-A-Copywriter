@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import AddBtn from './AddBtn';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+import setDayName from '../../Reducers/CalendarApp/setDayName'
+
 
 class Head extends Component {
     
@@ -30,7 +32,7 @@ class Head extends Component {
                     this.props.day.container.isFirstDay ?
                         <div className='date'>
                             <div className='text'>
-                                {this.props.setFirstDayName(this.props.day)}
+                                {setDayName(this.props.day)}
                             </div>
                             <div className='number'>
                                 {this.props.day.day}
@@ -50,7 +52,7 @@ class Head extends Component {
 
 export default connect(
     state => ({ 
-        setFirstDayName: state.calendarAppReducer.monthsToRender.setDayName
+
     }),
     dispatch => ({
 

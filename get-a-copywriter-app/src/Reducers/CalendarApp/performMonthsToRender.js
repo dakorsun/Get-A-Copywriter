@@ -1,101 +1,107 @@
 
 import setDayName from './setDayName'
 
-const performMonthsToRender = function(calendar, today) {
 
-  let year = +today.year,
-      month = +today.month,
-      day = +today.day;
-
-  let actualDay = new Date(year, month, day);
-  
+const performMonthsToRender = function(projects) {
+  let today = new Date(2018, 10, 16);
 
   let result = {
     leftScreen: [],
     mainScreen: [],
     rightScreen: [],
-    today: today,
-    setDayName: setDayName
+    today: {
+      year: today.getFullYear() + "",
+      month: today.getMonth() + "",
+      day: today.getDate() + ""
+    }
   };
 
-
-  const setScreen = function(date, calendar, settingType){
+  const setScreen = function(date, projects, settingType) {
     let val = 1;
-    switch(settingType){
-      case 'left': 
+    switch (settingType) {
+      case "left":
         val = -42;
         break;
-      case 'main':
+      case "main":
         val = 0;
         break;
-      case 'right':
+      case "right":
         val = 42;
         break;
-    };
+    }
 
-    let interimDate = new Date(date.getFullYear(), date.getMonth(), date.getDate())
+    let interimDate = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate()
+    );
     interimDate.setDate(interimDate.getDate() - interimDate.getDay() - 7 + val);
-    let day = interimDate.getDate() + '';
-    let month = interimDate.getMonth() + '';
 
-
-
-    let getIndex = function(calendar, day, month){
-      for (let i = 0; i < calendar.days.length; i++) {
-        if (calendar.days[i].month == month) {
-          if (calendar.days[i].day == day) {
-            return i;
-          }
-        }
+    let checkAndSetDayProjects = function(day, projects) {
+      for (let i = 0; i < projects.length; i++) {
+        if (
+          projects[i].date.year == day.year &&
+          projects[i].date.month == day.month &&
+          projects[i].date.day == day.day
+        ) {
+          day.projects = projects[i].projects.map(project => project);
+        }else {day.projects = []}
       }
+
+      return day;
     };
-    
-    let index = getIndex(calendar, day, month);
-    let res = [];  
-      for(let w = 0; w < 6; w++){
-        let week = {
-          week: w,
-          days: []
-        };
-        for(let i = (index + w * 7); i < ((index + w * 7) + 7); i++){
-          let day = {
-            year: calendar.days[i].year,
-            month: calendar.days[i].month,
-            day: calendar.days[i].day,
-            id: calendar.days[i].id,
-            projects: calendar.days[i].projects,
-            container: {
-              isToday: false,
-              isFirstDay: false,
-              isMonthActual: false
-            }
-          }
 
-          if(+calendar.days[i].month === +date.getMonth() && +calendar.days[i].day === +date.getDate()){
-            day.container.isToday = true;
-          }
-
-          if(+calendar.days[i].day === 1){
-            day.container.isFirstDay = true;
-          }
-
-          if(+calendar.days[i].month === date.getMonth()){
-            day.container.isMonthActual = true;
-          }
-
-          week.days = week.days.concat(day);
-        }
-        res = res.concat(week);
+    let arr = [];
+    for (let w = 0; w < 6; w++) {
+      let week = {
+        index: w,
+        days: []
       };
-      return res;
+      for (let i = 0; i < 7; i++) {
+        let day = {
+          year: interimDate.getFullYear() + "",
+          month: interimDate.getMonth() + "",
+          day: interimDate.getDate() + "",
+          container: {
+            isToday: false,
+            isFirstDay: false,
+            isMonthActual: false
+          }
+
+        };
+
+        day = checkAndSetDayProjects(day, projects);
+
+        if (day.year === date.getFullYear() + ''
+            && day.month === date.getMonth() + ''
+            && day.day === date.getDate() + '') {
+              day.container.isToday = true;
+        }
+
+        if (day.day === '1') {
+          day.container.isFirstDay = true;
+        }
+
+        if (day.year === date.getFullYear() + ''
+          && day.month === date.getMonth() + '') {
+            day.container.isMonthActual = true;
+        }
+
+        interimDate.setDate(interimDate.getDate() + 1);
+
+        week.days = week.days.concat(day);
+      }
+
+      arr = arr.concat(week);
+     
+    };
+    return arr;
   };
-  result.leftScreen = setScreen(actualDay, calendar, 'left');
-  result.mainScreen = setScreen(actualDay, calendar, 'main');
-  result.rightScreen = setScreen(actualDay, calendar, 'right');
+  result.leftScreen = setScreen(today, projects, "left");
+  result.mainScreen = setScreen(today, projects, "main");
+  result.rightScreen = setScreen(today, projects, "right");
 
   return result;
-
-
 };
 
 

@@ -1,4 +1,5 @@
 import initialState from './initialState';
+import setNewScreen from './setNewScreen';
 
 export default function calendarAppActions(state = initialState, action){
     let newState = {};
@@ -32,14 +33,9 @@ export default function calendarAppActions(state = initialState, action){
             for(let key in state){
                 newState[key] = state[key];
             };
+            newState.monthsToRender = setNewScreen(state.projects, state.monthsToRender, action.direction);       
             
-            return state.map(item => (item === state.monthsToRender) ? state.functions.switchScreen(state.calendar, item, action.direction) : item)
-
-
-            return(newState);
-            break;
-
-       
+            return(newState)
         default: 
         return state
     }
