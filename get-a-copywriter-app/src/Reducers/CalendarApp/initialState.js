@@ -1,11 +1,7 @@
-import setCalendar from './setCalendar';
 import performMonthsToRender from './performMonthsToRender';
-import injectProjects from './injectProjects';
 import initialProjects from './projects';
-import switchScreen from './switchScreen';
+import setNewScreen from './setNewScreen';
 
-    let calendar = setCalendar([2018, 10, 16]);
-    calendar = injectProjects(calendar, initialProjects);
 
 const initialState = {
     filters: {
@@ -48,10 +44,11 @@ const initialState = {
             }
         ]
     },
+    isAddPopUpOpened: true,
     projects: initialProjects,
     monthsToRender: performMonthsToRender(initialProjects),
     functions: {
-        switchScreen: switchScreen
+        setNewScreen: setNewScreen
     }
 
 }

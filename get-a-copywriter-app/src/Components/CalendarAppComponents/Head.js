@@ -8,6 +8,9 @@ import setDayName from '../../Reducers/CalendarApp/setDayName'
 
 class Head extends Component {
     
+    clickAddBtn(){
+        this.props.openAddPopUp(this.props.day.day, this.props.day.month, this.props.day.year);
+    }
 
     render() {
         return(
@@ -17,7 +20,7 @@ class Head extends Component {
                 transitionAppear={true}
                 transitionEnter={true}
                 transitionLeave={true}>
-                {this.props.onFocus && <AddBtn/> || !this.props.onFocus && null}
+                {this.props.onFocus && <AddBtn onClick={this.clickAddBtn.bind(this)}/> || !this.props.onFocus && null}
             </ReactCSSTransitionGroup>
                 {this.props.day.container.isToday ? 
                         <div className='date'>
@@ -55,6 +58,8 @@ export default connect(
 
     }),
     dispatch => ({
-
+        openAddPopUp: () => {
+            dispatch({ type: 'OPEN_ADD_POP_UP' })
+        }
     })
 )(Head);

@@ -1,6 +1,4 @@
 
-import setDayName from './setDayName'
-
 
 const performMonthsToRender = function(projects) {
   let today = new Date(2018, 10, 16);
@@ -17,7 +15,7 @@ const performMonthsToRender = function(projects) {
   };
 
   const setScreen = function(date, projects, settingType) {
-    let val = 1;
+    let val;
     switch (settingType) {
       case "left":
         val = -42;
@@ -39,15 +37,18 @@ const performMonthsToRender = function(projects) {
 
     let checkAndSetDayProjects = function(day, projects) {
       for (let i = 0; i < projects.length; i++) {
+        day.projects = [];
+        
         if (
-          projects[i].date.year == day.year &&
-          projects[i].date.month == day.month &&
-          projects[i].date.day == day.day
+          projects[i].date.year === day.year &&
+          projects[i].date.month === day.month &&
+          projects[i].date.day === day.day
         ) {
           day.projects = projects[i].projects.map(project => project);
-        }else {day.projects = []}
+          
+          return day;
+        } 
       }
-
       return day;
     };
 

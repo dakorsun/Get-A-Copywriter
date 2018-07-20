@@ -18,7 +18,6 @@ class Main extends Component {
                     : <Project
                         project={project}/>
                 )
-
                 }
             </div>
         )

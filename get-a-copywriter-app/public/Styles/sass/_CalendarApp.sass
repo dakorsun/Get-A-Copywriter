@@ -65,15 +65,17 @@
                     vertical-align: middle
                     line-height: $menu-height
                     transform: translateY(5px)
-
-                    .arrow
-                        &:hover
+                    width: 10px
+                    &:hover
+                        cursor: pointer
+                        .arrow
                             border: solid $hover-lime
                             border-width: 0 2px 2px 0
                             display: inline-block
                             padding: 3px
                             transition: .1s
-                            cursor: pointer
+                    
+                        
 
                 .date
                     display: inline-block
@@ -221,7 +223,7 @@
             align-items: stretch
 
             .shaded
-                background-image: repeating-linear-gradient(-45deg, #ccc 1px, #fff 2px, #fff 5px, #ccc 6px)
+                background-image: repeating-linear-gradient(-45deg, #ececec 1px, #fff 2px, #fff 5px, #ececec 6px)
                 background-color: #fff
 
             .day-cell
@@ -344,6 +346,7 @@
                                     display: inline-block
                                     line-height: 26px    
                                     vertical-align: middle
+                                    margin-right: 5px
 
 
                                 .status-text
@@ -404,7 +407,13 @@
                                     height: 12px
                                     border-radius: 6px
                                     background: $active-color
-
+                    .more
+                        font-size: $font-small
+                        text-align: center
+                        border-radius: 2px
+                        &:hover
+                            background: #eee
+                            cursor: pointer
 
             .today
                 border: 2px solid #74a3d2

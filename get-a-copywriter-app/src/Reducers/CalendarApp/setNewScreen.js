@@ -1,52 +1,55 @@
 
 
-function setNewScreen(projects, obj, direction){
+const setNewScreen = function (projects, obj, direction){
   
+  console.log('start')
+
   let arr;
-  let today = {
-    year: '2018',
-    months: '10',
-    day: '16'
-  }
+  let today = new Date(2018, 10, 16)
   let val;
 
 
   switch(direction){
       case 'left':
-        val = -42;
+        val = -84;
       break;
       case 'right':
-        val = 42;
+        val = 84;
       break;
       default:
           break        
   }
 
   let mainFirstDay = obj.mainScreen[0].days[0];
+  
   let countDate = new Date(+mainFirstDay.year, +mainFirstDay.month, +mainFirstDay.day);
+ 
   countDate.setDate(countDate.getDate() + val);
+ 
 
-  function setScreen(projects, countDate, today) {
-
-
+  const setScreen = function(projects, countDate, today) {
 
     let interimDate = new Date(countDate.getFullYear(), countDate.getMonth(), countDate.getDate());
-    
+   
       let checkAndSetDayProjects = function(day, projects) {
         for (let i = 0; i < projects.length; i++) {
+          day.projects = [];
+
+
           if (
-            projects[i].date.year == day.year &&
-            projects[i].date.month == day.month &&
-            projects[i].date.day == day.day
+            projects[i].date.year === day.year &&
+            projects[i].date.month === day.month &&
+            projects[i].date.day === day.day
           ) {
             day.projects = projects[i].projects.map(project => project);
-          }else {day.projects = []}
+            return day
+          }
         }
   
         return day;
       };
   
-      let arr = [];
+      let res = [];
       for (let w = 0; w < 6; w++) {
         let week = {
           index: w,
@@ -65,32 +68,33 @@ function setNewScreen(projects, obj, direction){
   
           };
   
-          day = checkAndSetDayProjects(day, projects);
+          checkAndSetDayProjects(day, projects);
   
-          if (day.year === today.year
-              && day.month === today.month
-              && day.day === today.day) {
-                day.container.isToday = true;
-          }
   
           if (day.day === '1') {
             day.container.isFirstDay = true;
           }
   
-          if (day.year === today.year
-            && day.month === today.month) {
-              day.container.isMonthActual = true;
+          if (day.year === today.getFullYear() + ''
+            && day.month === today.getMonth()+ '') {
+             day.container.isMonthActual = true;
+             if(day.day === today.getDate() + ''){
+             }
           }
+
+          console.log(day)
+
+          week.days = week.days.concat(day);
   
           interimDate.setDate(interimDate.getDate() + 1);
   
-          week.days = week.days.concat(day);
         }
   
-        arr = arr.concat(week);
+        res = res.concat(week);
         
       };
-    return arr;
+    return res;
+    
   };
     
   arr = setScreen(projects, countDate, today)
@@ -102,7 +106,7 @@ function setNewScreen(projects, obj, direction){
   switch(direction){
     case 'left':
     result.leftScreen = arr;
-    result.mainScreen = obj.rightScreen;
+    result.mainScreen = obj.leftScreen;
     result.rightScreen = obj.mainScreen;
     break;
     

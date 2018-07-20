@@ -269,7 +269,7 @@
               display: flex;
               flex-direction: column;
               align-items: stretch;
-              border-botom: 1px solid #E9EFF3; }
+              border-bottom: 1px solid #E9EFF3; }
               .header .right-part .icon-block .about-wrapper .about .pop-up .links .link {
                 width: 100%;
                 height: 48px; }
@@ -467,14 +467,16 @@
           display: inline-block;
           vertical-align: middle;
           line-height: 48px;
-          transform: translateY(5px); }
-          .calendar-app .heading .center-part .date-slider .img .arrow:hover {
-            border: solid #54E5A0;
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 3px;
-            transition: .1s;
+          transform: translateY(5px);
+          width: 10px; }
+          .calendar-app .heading .center-part .date-slider .img:hover {
             cursor: pointer; }
+            .calendar-app .heading .center-part .date-slider .img:hover .arrow {
+              border: solid #54E5A0;
+              border-width: 0 2px 2px 0;
+              display: inline-block;
+              padding: 3px;
+              transition: .1s; }
         .calendar-app .heading .center-part .date-slider .date {
           display: inline-block;
           font-size: 18px;
@@ -582,7 +584,7 @@
       justify-content: space-between;
       align-items: stretch; }
       .calendar-app .calendar .calendar-row .shaded {
-        background-image: repeating-linear-gradient(-45deg, #ccc 1px, #fff 2px, #fff 5px, #ccc 6px);
+        background-image: repeating-linear-gradient(-45deg, #ececec 1px, #fff 2px, #fff 5px, #ececec 6px);
         background-color: #fff; }
       .calendar-app .calendar .calendar-row .day-cell {
         width: 163px;
@@ -683,7 +685,8 @@
                 .calendar-app .calendar .calendar-row .day-cell .main .project .bottom .status .icon {
                   display: inline-block;
                   line-height: 26px;
-                  vertical-align: middle; }
+                  vertical-align: middle;
+                  margin-right: 5px; }
                 .calendar-app .calendar .calendar-row .day-cell .main .project .bottom .status .status-text {
                   font-size: 12px;
                   display: inline-block;
@@ -717,6 +720,13 @@
               height: 12px;
               border-radius: 6px;
               background: #484B58; }
+          .calendar-app .calendar .calendar-row .day-cell .main .more {
+            font-size: 12px;
+            text-align: center;
+            border-radius: 2px; }
+            .calendar-app .calendar .calendar-row .day-cell .main .more:hover {
+              background: #eee;
+              cursor: pointer; }
       .calendar-app .calendar .calendar-row .today {
         border: 2px solid #74a3d2;
         border-right: 2px solid #74a3d2;
@@ -848,6 +858,153 @@
   text-align: center; }
   .plus-fixed:hover {
     cursor: pointer; }
+
+.pop-up-fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(204, 255, 204, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 300;
+  display: flex;
+  justify-content: space-around; }
+  .pop-up-fixed .add-project {
+    width: 605px;
+    max-height: 718px;
+    background: #fff;
+    border: 1px solid #E9EFF3;
+    padding: 16px 24px; }
+    .pop-up-fixed .add-project .head {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px; }
+      .pop-up-fixed .add-project .head .text {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 26px;
+        color: #484B58; }
+      .pop-up-fixed .add-project .head .close-x {
+        width: 24px;
+        height: 24px;
+        background-image: url(../../Assets/close.svg);
+        fill: #484B58; }
+        .pop-up-fixed .add-project .head .close-x:hover {
+          cursor: pointer; }
+    .pop-up-fixed .add-project .input {
+      width: 100%; }
+      .pop-up-fixed .add-project .input:first-of-type {
+        margin-bottom: 24px; }
+      .pop-up-fixed .add-project .input p {
+        font-size: 14px;
+        color: #6F6F7A; }
+      .pop-up-fixed .add-project .input input {
+        width: 100%;
+        border: 1px solid #E9EFF3;
+        padding: 12px 16px;
+        font-size: 15px;
+        line-height: 22px;
+        color: #484B58; }
+        .pop-up-fixed .add-project .input input:focus {
+          outline: none;
+          border: 2px solid #74a3d2; }
+    .pop-up-fixed .add-project .attach {
+      width: 100%;
+      height: 60px;
+      border: 1px solid #E9EFF3;
+      margin-bottom: 24px; }
+      .pop-up-fixed .add-project .attach .img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin: 10px 8px;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        background: linear-gradient(309deg, #4cdcc8, #54e5a0); }
+        .pop-up-fixed .add-project .attach .img:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-image: url(../../Assets/attachment@2x.png);
+          background-size: 25px 25px;
+          background-position: center;
+          background-repeat: no-repeat; }
+      .pop-up-fixed .add-project .attach p {
+        display: inline-block;
+        color: #6F6F7A; }
+    .pop-up-fixed .add-project .settings {
+      display: flex;
+      justify-content: space-between;
+      position: relative; }
+      .pop-up-fixed .add-project .settings p {
+        font-size: 14px;
+        line-height: 24px;
+        color: #6F6F7A; }
+      .pop-up-fixed .add-project .settings .filter {
+        background: #FAFCFE;
+        border: 1px solid #E9EFF3;
+        position: relative;
+        padding: 0 16px; }
+        .pop-up-fixed .add-project .settings .filter p {
+          font-size: 15px;
+          line-height: 48px;
+          color: #484B58;
+          display: inline-block; }
+        .pop-up-fixed .add-project .settings .filter div.img {
+          line-height: 48px;
+          position: absolute;
+          right: 16px;
+          top: 0; }
+      .pop-up-fixed .add-project .settings input.number {
+        height: 48px;
+        border: 1px solid #E9EFF3;
+        padding: 12px 16px;
+        font-size: 15px;
+        line-height: 22px;
+        color: #6F6F7A; }
+        .pop-up-fixed .add-project .settings input.number:focus {
+          outline: none; }
+        .pop-up-fixed .add-project .settings input.number:hover {
+          cursor: pointer; }
+    .pop-up-fixed .add-project .too-soon {
+      text-align: right; }
+      .pop-up-fixed .add-project .too-soon p {
+        display: inline-block;
+        font-size: 12px;
+        color: #484B58; }
+      .pop-up-fixed .add-project .too-soon .circle-help {
+        display: inline-block;
+        background: url(../../Assets/circle-help.svg);
+        width: 12px;
+        height: 12px;
+        background-position: center;
+        margin-left: 8px;
+        vertical-align: middle; }
+        .pop-up-fixed .add-project .too-soon .circle-help:hover {
+          cursor: pointer; }
+    .pop-up-fixed .add-project .settings {
+      margin-bottom: 24px; }
+      .pop-up-fixed .add-project .settings .first {
+        width: 174px; }
+      .pop-up-fixed .add-project .settings .second {
+        width: 105px; }
+      .pop-up-fixed .add-project .settings .third {
+        width: 196px; }
+    .pop-up-fixed .add-project .settings.second {
+      margin-bottom: 0; }
+      .pop-up-fixed .add-project .settings.second .first {
+        width: 174px; }
+      .pop-up-fixed .add-project .settings.second .second {
+        width: 168px; }
+      .pop-up-fixed .add-project .settings.second .third {
+        width: 133px; }
 
 * {
   margin: 0;

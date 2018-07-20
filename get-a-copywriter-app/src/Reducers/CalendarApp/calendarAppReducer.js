@@ -35,7 +35,7 @@ export default function calendarAppActions(state = initialState, action){
             };
             newState.monthsToRender = setNewScreen(state.projects, state.monthsToRender, action.direction);       
             
-            return(newState)
+            return(newState);
         default: 
         return state
     }
