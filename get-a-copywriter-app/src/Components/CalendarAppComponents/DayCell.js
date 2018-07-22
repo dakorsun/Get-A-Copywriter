@@ -54,7 +54,9 @@ class DayCell extends Component {
 
 export default connect(
     state => ({
-        mainScreen: state.calendarAppReducer.monthsToRender.mainScreen
+        mainScreen: state.calendarAppReducer.monthsToRender.mainScreen,
+        month: state.calendarAppReducer.monthsToRender.actualMonth,
+        year: state.calendarAppReducer.monthsToRender.actualYear,
     }),
     dispatch => ({
         onMouseEnter: (id, i) => {
@@ -62,7 +64,10 @@ export default connect(
         },
         onMouseLeave: (id, i) => {
             dispatch({type: 'DAYCELL_LEAVE', id: id, index: i})
-        }
+        },
+        callAdd: () => (
+            dispatch({type: 'OPEN_ADD_MODAL'})
+        )
 
     })
 )(DayCell);

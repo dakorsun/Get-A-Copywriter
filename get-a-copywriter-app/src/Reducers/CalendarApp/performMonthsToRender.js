@@ -1,4 +1,5 @@
-
+import setActualMonth from './setActualMonth';
+import setActualYear from './setActualYear';
 
 const performMonthsToRender = function(projects) {
   let today = new Date(2018, 10, 16);
@@ -101,6 +102,9 @@ const performMonthsToRender = function(projects) {
   result.leftScreen = setScreen(today, projects, "left");
   result.mainScreen = setScreen(today, projects, "main");
   result.rightScreen = setScreen(today, projects, "right");
+
+  result.actualMonth = setActualMonth(result.mainScreen);
+  result.actualYear = setActualYear(result.mainScreen);
 
   return result;
 };

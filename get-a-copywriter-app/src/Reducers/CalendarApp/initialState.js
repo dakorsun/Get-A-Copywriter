@@ -1,6 +1,7 @@
 import performMonthsToRender from './performMonthsToRender';
 import initialProjects from './projects';
-import setNewScreen from './setNewScreen';
+import setNewWidgetRender from './setNewWidgetRender';
+
 
 
 const initialState = {
@@ -47,8 +48,13 @@ const initialState = {
     isAddPopUpOpened: true,
     projects: initialProjects,
     monthsToRender: performMonthsToRender(initialProjects),
-    functions: {
-        setNewScreen: setNewScreen
+    calendarWidget: {
+        isOpened: {
+            order: true,
+            publish: false
+        },
+        container:  setNewWidgetRender('2018', '11')
+        
     }
 
 }

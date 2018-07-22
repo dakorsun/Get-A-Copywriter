@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 class Plus extends Component {
     
     clickPlus(){
+        console.log('1')
         this.props.callAdd();
     }
     
@@ -25,7 +26,7 @@ export default connect(
     }),
     dispatch => ({
         callAdd: () => (
-            dispatch({type: 'CALL_ADD'})
+            dispatch({type: 'OPEN_ADD_MODAL'})
         )
     })
 )(Plus);

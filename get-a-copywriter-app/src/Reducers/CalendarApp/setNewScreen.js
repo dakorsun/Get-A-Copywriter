@@ -1,4 +1,5 @@
-
+import setActualMonth from './setActualMonth';
+import setActualYear from './setActualYear';
 
 const setNewScreen = function (projects, obj, direction){
   
@@ -82,7 +83,6 @@ const setNewScreen = function (projects, obj, direction){
              }
           }
 
-          console.log(day)
 
           week.days = week.days.concat(day);
   
@@ -119,6 +119,9 @@ const setNewScreen = function (projects, obj, direction){
     default:
     break        
   }
+
+  result.actualMonth = setActualMonth(result.mainScreen);
+  result.actualYear = setActualYear(result.mainScreen);
 
   return result;   
 

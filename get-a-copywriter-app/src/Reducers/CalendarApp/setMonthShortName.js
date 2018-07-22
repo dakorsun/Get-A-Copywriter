@@ -1,6 +1,6 @@
-const setDayName = function(day){
+const setDayName = function(month){
 
-    switch(day.month){
+    switch(month){
         
         case '0':
             return 'Jan'

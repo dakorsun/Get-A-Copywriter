@@ -866,15 +866,16 @@
   background: rgba(204, 255, 204, 0.5);
   top: 0;
   left: 0;
-  z-index: 300;
-  display: flex;
-  justify-content: space-around; }
+  z-index: 300; }
   .pop-up-fixed .add-project {
+    margin: 30px auto;
     width: 605px;
-    max-height: 718px;
     background: #fff;
+    min-height: 600px;
+    max-height: 718px;
     border: 1px solid #E9EFF3;
-    padding: 16px 24px; }
+    padding: 16px 24px;
+    position: relative; }
     .pop-up-fixed .add-project .head {
       width: 100%;
       display: flex;
@@ -892,119 +893,278 @@
         fill: #484B58; }
         .pop-up-fixed .add-project .head .close-x:hover {
           cursor: pointer; }
-    .pop-up-fixed .add-project .input {
-      width: 100%; }
-      .pop-up-fixed .add-project .input:first-of-type {
-        margin-bottom: 24px; }
-      .pop-up-fixed .add-project .input p {
-        font-size: 14px;
-        color: #6F6F7A; }
-      .pop-up-fixed .add-project .input input {
+    .pop-up-fixed .add-project form {
+      font-size: 0; }
+      .pop-up-fixed .add-project form .input {
+        width: 100%; }
+        .pop-up-fixed .add-project form .input:first-of-type {
+          margin-bottom: 24px; }
+        .pop-up-fixed .add-project form .input p {
+          font-size: 14px;
+          color: #6F6F7A;
+          line-height: 24px; }
+        .pop-up-fixed .add-project form .input input, .pop-up-fixed .add-project form .input textarea {
+          width: 100%;
+          border: 2px solid #E9EFF3;
+          padding: 12px 16px;
+          font-size: 15px;
+          line-height: 22px;
+          color: #484B58;
+          margin: 0;
+          resize: none; }
+          .pop-up-fixed .add-project form .input input:focus, .pop-up-fixed .add-project form .input textarea:focus {
+            outline: none;
+            border: 2px solid #74a3d2; }
+        .pop-up-fixed .add-project form .input .error {
+          border: 2px solid #dc5d5b;
+          color: #dc5d5b;
+          transition: border .5s ease; }
+        .pop-up-fixed .add-project form .input .error-message {
+          font-size: 12px;
+          line-height: 16px;
+          color: #dc5d5b; }
+      .pop-up-fixed .add-project form .second .input {
+        margin-bottom: 0; }
+        .pop-up-fixed .add-project form .second .input textarea {
+          height: 160px; }
+      .pop-up-fixed .add-project form .attach {
         width: 100%;
+        height: 60px;
         border: 1px solid #E9EFF3;
-        padding: 12px 16px;
-        font-size: 15px;
-        line-height: 22px;
-        color: #484B58; }
-        .pop-up-fixed .add-project .input input:focus {
-          outline: none;
-          border: 2px solid #74a3d2; }
-    .pop-up-fixed .add-project .attach {
-      width: 100%;
-      height: 60px;
-      border: 1px solid #E9EFF3;
-      margin-bottom: 24px; }
-      .pop-up-fixed .add-project .attach .img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        vertical-align: middle;
-        margin: 10px 8px;
-        display: inline-block;
-        overflow: hidden;
-        position: relative;
-        background: linear-gradient(309deg, #4cdcc8, #54e5a0); }
-        .pop-up-fixed .add-project .attach .img:after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
+        margin-bottom: 24px; }
+        .pop-up-fixed .add-project form .attach .img {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background-image: url(../../Assets/attachment@2x.png);
-          background-size: 25px 25px;
+          vertical-align: middle;
+          margin: 10px 8px;
+          display: inline-block;
+          overflow: hidden;
+          position: relative;
+          background: linear-gradient(309deg, #4cdcc8, #54e5a0); }
+          .pop-up-fixed .add-project form .attach .img:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-image: url(../../Assets/attachment@2x.png);
+            background-size: 25px 25px;
+            background-position: center;
+            background-repeat: no-repeat; }
+          .pop-up-fixed .add-project form .attach .img:hover {
+            cursor: pointer; }
+        .pop-up-fixed .add-project form .attach p {
+          display: inline-block;
+          color: #6F6F7A;
+          font-size: 15px;
+          vertical-align: middle; }
+      .pop-up-fixed .add-project form .settings {
+        display: flex;
+        justify-content: space-between;
+        position: relative; }
+        .pop-up-fixed .add-project form .settings .first, .pop-up-fixed .add-project form .settings .second, .pop-up-fixed .add-project form .settings .third {
+          position: relative; }
+        .pop-up-fixed .add-project form .settings p {
+          font-size: 14px;
+          line-height: 24px;
+          color: #6F6F7A; }
+        .pop-up-fixed .add-project form .settings .filter {
+          background: #FAFCFE;
+          border: 1px solid #E9EFF3;
+          position: relative;
+          padding: 0 16px;
+          z-index: 50; }
+          .pop-up-fixed .add-project form .settings .filter p {
+            font-size: 15px;
+            line-height: 48px;
+            color: #484B58;
+            display: inline-block; }
+          .pop-up-fixed .add-project form .settings .filter div.img {
+            line-height: 48px;
+            position: absolute;
+            right: 16px;
+            top: 0; }
+          .pop-up-fixed .add-project form .settings .filter:hover {
+            cursor: pointer; }
+        .pop-up-fixed .add-project form .settings input.number {
+          height: 48px;
+          width: 100%;
+          border: 1px solid #E9EFF3;
+          padding: 12px 16px;
+          font-size: 15px;
+          line-height: 22px;
+          color: #6F6F7A; }
+          .pop-up-fixed .add-project form .settings input.number:focus {
+            outline: none; }
+          .pop-up-fixed .add-project form .settings input.number:hover {
+            cursor: pointer; }
+      .pop-up-fixed .add-project form .too-soon {
+        text-align: right; }
+        .pop-up-fixed .add-project form .too-soon p {
+          display: inline-block;
+          font-size: 12px;
+          color: #484B58;
+          transform: translateY(4px); }
+        .pop-up-fixed .add-project form .too-soon .circle-help {
+          display: inline-block;
+          background: url(../../Assets/circle-help.svg);
+          width: 12px;
+          height: 12px;
           background-position: center;
-          background-repeat: no-repeat; }
-      .pop-up-fixed .add-project .attach p {
-        display: inline-block;
-        color: #6F6F7A; }
-    .pop-up-fixed .add-project .settings {
+          margin-left: 8px;
+          vertical-align: middle; }
+          .pop-up-fixed .add-project form .too-soon .circle-help:hover {
+            cursor: pointer; }
+      .pop-up-fixed .add-project form .settings {
+        margin-bottom: 24px; }
+        .pop-up-fixed .add-project form .settings .first {
+          width: 174px; }
+        .pop-up-fixed .add-project form .settings .second {
+          position: relative;
+          width: 105px; }
+        .pop-up-fixed .add-project form .settings .third {
+          width: 196px; }
+      .pop-up-fixed .add-project form .settings.second {
+        margin-bottom: 0; }
+        .pop-up-fixed .add-project form .settings.second .first {
+          width: 174px; }
+        .pop-up-fixed .add-project form .settings.second .second {
+          width: 168px; }
+        .pop-up-fixed .add-project form .settings.second .third {
+          width: 133px; }
+    .pop-up-fixed .add-project .buttons {
+      width: 290px;
       display: flex;
       justify-content: space-between;
-      position: relative; }
-      .pop-up-fixed .add-project .settings p {
-        font-size: 14px;
-        line-height: 24px;
-        color: #6F6F7A; }
-      .pop-up-fixed .add-project .settings .filter {
-        background: #FAFCFE;
-        border: 1px solid #E9EFF3;
-        position: relative;
-        padding: 0 16px; }
-        .pop-up-fixed .add-project .settings .filter p {
-          font-size: 15px;
-          line-height: 48px;
-          color: #484B58;
-          display: inline-block; }
-        .pop-up-fixed .add-project .settings .filter div.img {
-          line-height: 48px;
-          position: absolute;
-          right: 16px;
-          top: 0; }
-      .pop-up-fixed .add-project .settings input.number {
-        height: 48px;
-        border: 1px solid #E9EFF3;
-        padding: 12px 16px;
-        font-size: 15px;
-        line-height: 22px;
-        color: #6F6F7A; }
-        .pop-up-fixed .add-project .settings input.number:focus {
-          outline: none; }
-        .pop-up-fixed .add-project .settings input.number:hover {
-          cursor: pointer; }
-    .pop-up-fixed .add-project .too-soon {
-      text-align: right; }
-      .pop-up-fixed .add-project .too-soon p {
+      margin-top: 18px; }
+      .pop-up-fixed .add-project .buttons .primary-s {
+        width: 178px; }
+      .pop-up-fixed .add-project .buttons .secondary-s {
+        width: 100px; }
+        .pop-up-fixed .add-project .buttons .secondary-s p {
+          width: 98px; }
+
+.calendar-pop-up {
+  position: absolute;
+  bottom: 170px;
+  right: 24px;
+  width: 387px;
+  background: #fff;
+  box-shadow: 0 30px 70px rgba(159, 177, 188, 0.28);
+  z-index: 100;
+  padding: 24px 32px 16px 32px; }
+  .calendar-pop-up .head {
+    display: flex;
+    justify-content: space-between;
+    color: #484B58; }
+    .calendar-pop-up .head .date {
+      margin-left: 10px; }
+      .calendar-pop-up .head .date .month {
         display: inline-block;
+        margin-right: 5px; }
+      .calendar-pop-up .head .date .year {
+        display: inline-block; }
+    .calendar-pop-up .head .switcher {
+      margin-right: 10px; }
+      .calendar-pop-up .head .switcher .img {
+        display: inline-block; }
+        .calendar-pop-up .head .switcher .img .arrow {
+          border: solid #afaeaf;
+          border-width: 0 2px 2px 0; }
+        .calendar-pop-up .head .switcher .img:first-of-type {
+          margin-right: 20px; }
+        .calendar-pop-up .head .switcher .img:hover {
+          cursor: pointer; }
+          .calendar-pop-up .head .switcher .img:hover .arrow {
+            border: solid #54E5A0;
+            border-width: 0 2px 2px 0; }
+  .calendar-pop-up .calendar-widget {
+    width: 100%; }
+    .calendar-pop-up .calendar-widget .names {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      height: 40px; }
+      .calendar-pop-up .calendar-widget .names .day {
+        width: 35px;
+        height: 35px;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 35px;
+        font-size: 14px;
+        color: #6F6F7A;
+        opacity: .65; }
+        .calendar-pop-up .calendar-widget .names .day:hover {
+          cursor: pointer; }
+    .calendar-pop-up .calendar-widget .week {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      height: 40px; }
+      .calendar-pop-up .calendar-widget .week .day {
+        width: 35px;
+        height: 35px;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 35px;
         font-size: 12px;
         color: #484B58; }
-      .pop-up-fixed .add-project .too-soon .circle-help {
-        display: inline-block;
-        background: url(../../Assets/circle-help.svg);
-        width: 12px;
-        height: 12px;
-        background-position: center;
-        margin-left: 8px;
-        vertical-align: middle; }
-        .pop-up-fixed .add-project .too-soon .circle-help:hover {
+        .calendar-pop-up .calendar-widget .week .day:hover {
           cursor: pointer; }
-    .pop-up-fixed .add-project .settings {
-      margin-bottom: 24px; }
-      .pop-up-fixed .add-project .settings .first {
-        width: 174px; }
-      .pop-up-fixed .add-project .settings .second {
-        width: 105px; }
-      .pop-up-fixed .add-project .settings .third {
-        width: 196px; }
-    .pop-up-fixed .add-project .settings.second {
-      margin-bottom: 0; }
-      .pop-up-fixed .add-project .settings.second .first {
-        width: 174px; }
-      .pop-up-fixed .add-project .settings.second .second {
-        width: 168px; }
-      .pop-up-fixed .add-project .settings.second .third {
-        width: 133px; }
+        .calendar-pop-up .calendar-widget .week .day .selected {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          background: #74A3D2;
+          color: #fff; }
+      .calendar-pop-up .calendar-widget .week .not-actual {
+        color: #6F6F7A;
+        opacity: .4; }
+
+.primary-s {
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  background-image: linear-gradient(282deg, #4cdcc8, #54e5a0);
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600; }
+  .primary-s:hover {
+    background-image: linear-gradient(282deg, #4cdcc8, #54e5a0);
+    cursor: pointer; }
+
+.secondary-s {
+  background-image: linear-gradient(288deg, #4cdcc8, #54e5a0);
+  border-radius: 20px;
+  color: #43b993;
+  display: block;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 600;
+  height: 40px;
+  margin: 0 auto;
+  padding: 3px;
+  position: relative;
+  width: 140px;
+  z-index: 2; }
+  .secondary-s:hover {
+    background-image: linear-gradient(282deg, #4cdcc8, #54e5a0);
+    cursor: pointer; }
+  .secondary-s span {
+    align-items: center;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background .5s ease;
+    width: 100%; }
 
 * {
   margin: 0;

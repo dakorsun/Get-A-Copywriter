@@ -3,14 +3,12 @@ import { connect } from 'react-redux';
 import AddBtn from './AddBtn';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import setDayName from '../../Reducers/CalendarApp/setDayName'
+import setMonthShortName from '../../Reducers/CalendarApp/setMonthShortName'
 
 
 class Head extends Component {
     
-    clickAddBtn(){
-        this.props.openAddPopUp(this.props.day.day, this.props.day.month, this.props.day.year);
-    }
+    
 
     render() {
         return(
@@ -20,7 +18,7 @@ class Head extends Component {
                 transitionAppear={true}
                 transitionEnter={true}
                 transitionLeave={true}>
-                {this.props.onFocus && <AddBtn onClick={this.clickAddBtn.bind(this)}/> || !this.props.onFocus && null}
+                {this.props.onFocus && <AddBtn /> || !this.props.onFocus && null}
             </ReactCSSTransitionGroup>
                 {this.props.day.container.isToday ? 
                         <div className='date'>
@@ -35,7 +33,7 @@ class Head extends Component {
                     this.props.day.container.isFirstDay ?
                         <div className='date'>
                             <div className='text'>
-                                {setDayName(this.props.day)}
+                                {setMonthShortName(this.props.day.month)}
                             </div>
                             <div className='number'>
                                 {this.props.day.day}
@@ -58,8 +56,6 @@ export default connect(
 
     }),
     dispatch => ({
-        openAddPopUp: () => {
-            dispatch({ type: 'OPEN_ADD_POP_UP' })
-        }
+        
     })
 )(Head);

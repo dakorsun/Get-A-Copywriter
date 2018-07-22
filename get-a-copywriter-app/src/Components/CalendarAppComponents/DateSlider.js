@@ -22,10 +22,10 @@ class DateSlider extends Component{
                 </div>
                 <div className='date'>
                     <div className='mounth'>
-                        November
+                        {this.props.month}
                     </div>
                     <div className='year'>
-                        2018 
+                        {this.props.year}
                     </div>
                 </div>
                 <div className='img' 
@@ -40,7 +40,8 @@ class DateSlider extends Component{
 
 export default connect(
     state => ({
-
+        month: state.calendarAppReducer.monthsToRender.actualMonth,
+        year: state.calendarAppReducer.monthsToRender.actualYear
     }),
     dispatch => ({
         leftClick: () => {
