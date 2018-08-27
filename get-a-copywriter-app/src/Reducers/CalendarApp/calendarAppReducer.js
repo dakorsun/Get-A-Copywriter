@@ -88,17 +88,17 @@ export default function calendarAppActions(state = initialState, action){
                 newState[key] = state[key];
             };
 
-            switch(action.place){
-                case 'order':
-                    newState.calendarWidget.isOpened.order = true;
-                    break;
+            // switch(action.place){
+            //     case 'order':
+            //         newState.calendarWidget.isOpened.order = true;
+            //         break;
 
-                case 'publish':
-                    newState.calendarWidget.isOpened.publish = true;
-                    break;
-                default: 
-                    break
-            }
+            //     case 'publish':
+            //         newState.calendarWidget.isOpened.publish = true;
+            //         break;
+            //     default: 
+            //         break
+            // }
             return(newState);
 
         case 'SELECT_MODAL_DAY':

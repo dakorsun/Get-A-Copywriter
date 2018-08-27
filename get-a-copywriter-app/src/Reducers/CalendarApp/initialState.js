@@ -45,12 +45,12 @@ const initialState = {
             }
         ]
     },
-    isAddPopUpOpened: true,
+    isAddPopUpOpened: false,
     projects: initialProjects,
     monthsToRender: performMonthsToRender(initialProjects),
     calendarWidget: {
         isOpened: {
-            order: true,
+            order: false,
             publish: false
         },
         container:  setNewWidgetRender('2018', '11')
